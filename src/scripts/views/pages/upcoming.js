@@ -1,5 +1,5 @@
 import TheMovieDbSource from '../../data/themoviedb-source';
-import {createMovieItemTemplate} from '../templates/template-creator';
+import { createMovieItemTemplate } from '../templates/template-creator';
 
 const Upcoming = {
   async render() {
@@ -7,6 +7,7 @@ const Upcoming = {
       <div class="content">
         <h2 class="content__heading">Upcoming in Cinema</h2>
         <div id="movies" class="movies">
+
         </div>
       </div>
     `;
