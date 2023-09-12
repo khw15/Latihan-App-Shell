@@ -13,4 +13,3 @@ const swRegister = async () => {
 };
 
 export default swRegister;
-
