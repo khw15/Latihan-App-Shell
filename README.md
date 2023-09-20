@@ -1,2 +1,7 @@
 # movie-catalogue
- Repositori ini berisi source code latihan aplikasi Progressive Web App bertemakan Movie Catalogue dari kelas Dicoding, Menjadi Front-End Web Developer Expert
+Belajar teknik CI/CD untuk Movie Catalogue di Dicoding Indonesia
+
+API, Progressive Web Apps, Mobile First Approach
+
+Demo Aplikasi
+https://moonlit-pika-76153f.netlify.app/
