@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import NotificationHelper from './notification-helper';
 import CONFIG from '../globals/config';
 

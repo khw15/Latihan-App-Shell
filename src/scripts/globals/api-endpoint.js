@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import CONFIG from './config';
 
 const API_ENDPOINT = {

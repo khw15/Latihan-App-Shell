@@ -1,8 +1,8 @@
-/* eslint-disable implicit-arrow-linebreak */
 class FavoriteMovieSearchPresenter {
   constructor({favoriteMovies, view}) {
-    this._view = view;
     this._favoriteMovies = favoriteMovies;
+    this._view = view;
+
     this._listenToSearchRequestByUser();
   }
 
@@ -25,10 +25,7 @@ class FavoriteMovieSearchPresenter {
     this._showFoundMovies(foundMovies);
   }
 
-  // eslint-disable-next-line class-methods-use-this
   _showFoundMovies(movies) {
-    if (!movies) return;
-
     this._view.showFavoriteMovies(movies);
   }
 

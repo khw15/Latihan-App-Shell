@@ -1,10 +1,9 @@
-/* eslint-disable max-len */
 import FavoriteMovieIdb from '../../data/favorite-movie-idb';
-import FavoriteMovieSearchPresenter from './liked-movies/favorite-movie-search-presenter';
-import FavoriteMovieSearchView from './liked-movies/favorite-movie-search-view';
+import FavoriteMovieView from './liked-movies/favorite-movie-view';
 import FavoriteMovieShowPresenter from './liked-movies/favorite-movie-show-presenter';
+import FavoriteMovieSearchPresenter from './liked-movies/favorite-movie-search-presenter';
 
-const view = new FavoriteMovieSearchView();
+const view = new FavoriteMovieView();
 
 const Like = {
   async render() {
@@ -12,11 +11,10 @@ const Like = {
   },
 
   async afterRender() {
+    // eslint-disable-next-line no-new
     new FavoriteMovieShowPresenter({view, favoriteMovies: FavoriteMovieIdb});
-    new FavoriteMovieSearchPresenter({
-      view,
-      favoriteMovies: FavoriteMovieIdb,
-    });
+    // eslint-disable-next-line no-new
+    new FavoriteMovieSearchPresenter({view, favoriteMovies: FavoriteMovieIdb});
   },
 };
 
