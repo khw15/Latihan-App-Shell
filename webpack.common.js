@@ -1,11 +1,18 @@
+const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const path = require('path');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+
+// Import environment variables
+require('dotenv').config({
+  path: path.resolve('.env'),
+});
 
 module.exports = {
   entry: {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
-    sw: path.resolve(__dirname, 'src/scripts/sw.js'),
   },
   output: {
     filename: '[name].bundle.js',
@@ -28,6 +35,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/templates/index.html'),
@@ -39,6 +47,13 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/'),
         },
       ],
+    }),
+    new WorkboxWebpackPlugin.InjectManifest({
+      swSrc: path.resolve(__dirname, 'src/scripts/sw.js'),
+      swDest: 'sw.bundle.js',
+    }),
+    new webpack.DefinePlugin({
+      'process.env': JSON.stringify(process.env),
     }),
   ],
 };
